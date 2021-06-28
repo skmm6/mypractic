@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <div>
+        <h1 id="time">
+
+        </h1>
+    </div>
+
+
+
+    <script>
+        
+    
+
+        function timeUP() {
+              
+        let current = new Date();
+        let end = new Date(2021,7,5)
+
+        let delta = end.getTime() - current.getTime() 
+
+        let days = Math.floor(delta / (24 * 3600 * 1000))
+        console.log(days);
+
+        delta -= days * (24 * 3600 * 1000)
+
+        console.log(delta);
+
+        let hours = Math.floor(delta / (3600 * 1000))
+        
+        console.log(hours);
+
+        delta -= hours * (3600 * 1000)
+
+        let minutes = Math.floor(delta / 60000)
+
+        console.log(minutes);
+
+        delta -= minutes * 60000
+
+        let seconds = Math.floor(delta / 1000)
+
+        const timeBlock = document.querySelector('#time')
+
+        timeBlock.innerHTML = `Осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд.  `;
+        };
+   
+        setInterval(timeUP, 1000 );
+
+
+    </script>
+
+
+
+</body>
+</html>
